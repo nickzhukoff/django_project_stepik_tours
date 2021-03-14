@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import tours.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', tours.views.main_view),
+    path('departure/<str:departure>/', tours.views.departure_view),
+    path('tour/<int:id>/', tours.views.tour_view),
 ]
